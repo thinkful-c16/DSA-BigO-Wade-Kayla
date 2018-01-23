@@ -38,6 +38,10 @@ function areYouHere(arr1, arr2) {
 
 //O(n^2) because it's a nested loop 
 
+// Upon review: maybe this is exponential? It definitely isn't just O(n^2) because
+// n doesn't mean anything here, what's *really* going on is that we're running 
+// O(array1.length * array2.length)
+
 
 //=== DOUBLER ===//
 
@@ -142,6 +146,7 @@ function efficientSearch(array, item) {
 //Findd the middle item and checks to see if that is our item; otherwise, it takes
 //the higher or lower end and keeps checking and splitting the array until we find the item
 //The big O classification is O(log(n))
+// return -1 following while loop is to indicate that item does not exist in given array, basically a false return
 
 //=== RANDOM ELEMENT ===//
 function findRandomElement(arr) {
@@ -151,3 +156,22 @@ function findRandomElement(arr) {
 //This function is just grabbing a random element in the array; the length of the array
 //doesn't matter; the operation will take the same amount of time 
 //therefore, the big O classification would be constant O(1);
+
+//=== IS IT PRIME ===//
+
+function isPrime(n) {
+  // if n is less than 2 or a decimal, it's not prime
+  if (n < 2 || n % 1 !== 0) {
+    return false;
+  }
+  // otherwise, check if `n` is divisible by any integer
+  // between 2 and n.
+  for (let i = 2; i < n; ++i) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+
+// This function is linear because in the worst-case scneario, our loop will only run
+// n times. Therefore amount of operations will always directly scale with value of n
+// O(n)
