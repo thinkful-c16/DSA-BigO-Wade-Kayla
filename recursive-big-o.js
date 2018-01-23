@@ -104,3 +104,37 @@ function printAnagram(word){
 // Run time complexity for this function is exponential. Because our recursive function call creates nested loops - where the amount of nested
 // loops is equivalent to string length - the run time for this functions increases exponentially as the string input grows larger.
 // O(2^n) where n is the length of the given string.
+
+// === ANIMAL HIERARCHY ===//
+
+const animalHierarchy = [
+  {id: 'Animals', parent: null},
+  {id: 'Mammals', parent: 'Animals'},
+  {id: 'Dogs', parent:'Mammals' },
+  {id: 'Cats', parent:'Mammals' },
+  {id: 'Golden Retriever', parent: 'Dogs'},
+  {id: 'Husky', parent:'Dogs' },
+  {id: 'Bengal', parent:'Cats' }
+];
+
+// ==============================
+function traverse(animalHierarchy, parent) {
+  // let ticks = 0;
+  let node = {};
+  animalHierarchy.filter(item => {
+    item.parent === parent;
+  })
+    .forEach(item => {
+      node[item.id] = traverse(animalHierarchy, item.id);
+    });
+  return node;  
+}
+
+//polynominal classification because we have to filter a property of the object we pass in
+//then we filter based on a property in that object and perform a loop on every item in the object to 
+//find more nested parents
+//O(log(n))
+
+console.log(traverse(animalHierarchy, null));
+
+
