@@ -37,3 +37,19 @@ function areYouHere(arr1, arr2) {
 // console.log(areYouHere([1,3], [1,2,4,5]));
 
 //O(n^2) because it's a nested loop 
+
+
+//=== DOUBLER ===//
+
+function doubleArrayValues(array) {
+  for (let i=0; i<array.length; i++) {
+    array[i] *= 2;
+  }
+  return array;
+}
+
+// function takes an array, multiplies every element of array by 2, then returns array with doubled values.
+// Amount of operations directly equivalent to array length. If array contains two elements, it will perform doubling operation twice (once per element).
+// If array contains 100 elements, function will perform doubling operation 100 times (once per every array element).
+// Therefore, this is a linear algorithm. O(n).
+
