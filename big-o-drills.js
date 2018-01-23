@@ -112,3 +112,33 @@ function generateFib(num) {
 //depends on the number you pass to it
 //the function has one for loop and its run time will depend on how high the input value is
 //thereforce, the big O classification is linear - O(n)
+
+//=== AN EFFICIENT SEARCH ===//
+
+function efficientSearch(array, item) {
+
+  let minIndex = 0;
+  let maxIndex = array.length - 1;
+  let currentIndex;
+  let currentElement;
+
+  while (minIndex <= maxIndex) {
+    currentIndex = Math.floor((minIndex + maxIndex) / 2);
+    currentElement = array[currentIndex];
+
+    if (currentElement < item) {
+      minIndex = currentIndex + 1;
+    }
+    else if (currentElement > item) {
+      maxIndex = currentIndex - 1;
+    }
+    else {
+      return currentIndex;
+    }
+  }
+  return -1;
+}
+
+//Findd the middle item and checks to see if that is our item; otherwise, it takes
+//the higher or lower end and keeps checking and splitting the array until we find the item
+//The big O classification is O(log(n))
