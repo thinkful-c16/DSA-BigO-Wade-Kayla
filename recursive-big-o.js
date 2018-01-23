@@ -154,11 +154,11 @@ function factorial(n) {
 //O(n)
 
 //=== FIBONACCI ===//
-let ticks = 0;
+// let ticks = 0;
 
 function fibonacci(n) {
-  ticks++;
-  console.log('ticks >>>>>', ticks);
+  // ticks++;
+  // console.log('ticks >>>>>', ticks);
   // Base case
   if (n <= 0) {
     return 0;
@@ -177,3 +177,105 @@ console.log(fibonacci(10));
 //everything between n and 2, requires 2 recursive calls so ~10^2
 //we are calling the function twice for every input that is greater than two
 //O(2^n)
+
+//=== ORGANIZATION CHART ===//
+
+let organization = {
+  'Zuckerberg': {		
+    'Schroepfer': {
+      'Bosworth': {
+        'Steve':{
+          'Kayla': {},
+          'Wade': {}
+        },
+        'Kyle':{
+          'Kayla': {
+            'Kayla': {},
+            'Wade': {}
+          },
+          'Wade': {
+            'Kayla': {},
+            'Wade': {}
+          }
+        },
+        'Andra':{}
+      },
+      'Zhao': {
+        'Richie':{},
+        'Sofia':{},
+        'Jen':{}
+      },
+      'Badros': {
+        'John':{},
+        'Mike':{},
+        'Pat':{}
+      },
+      'Parikh': {
+        'Zach':{},
+        'Ryan':{},
+        'Tes':{}
+      }
+    },
+    'Schrage': {
+      'VanDyck': {
+        'Sabrina':{},
+        'Michelle':{},
+        'Josh':{}
+      },
+      'Swain': {
+        'Blanch':{},
+        'Tom':{},
+        'Joe':{}
+      },
+      'Frankovsky': {
+        'Jasee':{},
+        'Brian':{},
+        'Margaret':{}
+      }
+    },
+    'Sandberg': {
+      'Goler': {
+        'Eddie':{},
+        'Julie':{},
+        'Annie':{}
+      },
+      'Hernandez': {
+        'Rowi':{},
+        'Inga':{},
+        'Morgan':{}
+      },
+      'Moissinac': {
+        'Amy':{},
+        'Chuck':{},
+        'Vinni':{}
+      },
+      'Kelley': {
+        'Eric':{},
+        'Ana':{},
+        'Wes':{}
+      }
+    }}};
+
+// let ticks = 0;
+
+function traverseA(data, depth = 0) {
+  // ticks++;
+  // console.log('ticks >>>>', ticks);
+  let indent = ' '.repeat(depth * 4);
+  Object.keys(data).forEach(key => {
+    console.log(indent + key);
+    traverseA(data[key], depth + 1);
+  });
+}
+
+function traverseB(node, indent=0) {
+  for (var key in node) {
+    console.log(' '.repeat(indent), key);
+    traverseB(node[key], indent + 4);
+  }
+}
+
+//Big O classification is polynominal (O(n^2)) since runtime depends on how deep the nesting
+//goes in the org tree; we are 
+
+// console.log(traverseA(organization));
