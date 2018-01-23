@@ -68,3 +68,16 @@ function naiveSearch(array, item) {
 // In which case, algorithm will search through every element of the given array.
 // This is a linear algorithm. Worst case will always be that the amount of operations
 // is the number of elements in the given array. O(n).
+
+//=== CREATING PAIRS ===//
+function createPairs(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for(let j = i+1; j < arr.length; j++) {
+      console.log(arr[i] + ', ' +  arr[j] );
+    }
+  }
+}
+
+// function takes an array and produces all possible pairs of elements within array (order does not matter)
+// by virtue of there being one loop within another loop (one nested loop)
+// this algorithm has a polynomial time complexity. O(n^2).
