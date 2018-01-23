@@ -53,3 +53,18 @@ function doubleArrayValues(array) {
 // If array contains 100 elements, function will perform doubling operation 100 times (once per every array element).
 // Therefore, this is a linear algorithm. O(n).
 
+// === NAIVE SEARCH ===//
+
+function naiveSearch(array, item) {
+  for (let i=0; i<array.length; i++) {
+    if (array[i] === item) {
+      return i;
+    }
+  }
+}
+
+// function takes an array and an item to look for.
+// worst case is that item to look for does not exist in the array passed.
+// In which case, algorithm will search through every element of the given array.
+// This is a linear algorithm. Worst case will always be that the amount of operations
+// is the number of elements in the given array. O(n).
