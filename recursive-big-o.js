@@ -135,6 +135,45 @@ function traverse(animalHierarchy, parent) {
 //find more nested parents
 //O(log(n))
 
+//NOT WORKING
 console.log(traverse(animalHierarchy, null));
 
 
+//=== FACTORIAL ===//
+function factorial(n) {  
+  // Base Case - when n is equal to 0, we stop the recursion
+  if (n === 0) {
+    return 1;
+  }
+  // This is our Recursive Case
+  // It will run for all other conditions except when n is equal to 0
+  return n * factorial(n - 1);
+}
+
+//Linear because n will determine how many math operations are peformed in the algorithm 
+//O(n)
+
+//=== FIBONACCI ===//
+let ticks = 0;
+
+function fibonacci(n) {
+  ticks++;
+  console.log('ticks >>>>>', ticks);
+  // Base case
+  if (n <= 0) {
+    return 0;
+  }
+  // Base case
+  if (n <= 2) {
+    return 1;
+  }	
+  // Recursive case
+  return fibonacci(n - 1) + fibonacci(n - 2);	
+}
+//looking for the third number in the fibonacci sequence
+console.log(fibonacci(10));
+
+//Fibonacci is exponential because for every input correlates to a greater increase in runtime
+//everything between n and 2, requires 2 recursive calls so ~10^2
+//we are calling the function twice for every input that is greater than two
+//O(2^n)
