@@ -142,3 +142,12 @@ function efficientSearch(array, item) {
 //Findd the middle item and checks to see if that is our item; otherwise, it takes
 //the higher or lower end and keeps checking and splitting the array until we find the item
 //The big O classification is O(log(n))
+
+//=== RANDOM ELEMENT ===//
+function findRandomElement(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+//This function is just grabbing a random element in the array; the length of the array
+//doesn't matter; the operation will take the same amount of time 
+//therefore, the big O classification would be constant O(1);
